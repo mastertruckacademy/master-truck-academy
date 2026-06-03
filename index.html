@@ -1962,8 +1962,8 @@
   // ── CONFIGURACIÓN MAKE.COM ──
   // 1. Crea tu escenario en Make.com
   // 2. Copia la URL del webhook y pégala aquí abajo:
-  const MAKE_WEBHOOK_URL = 'TU_URL_WEBHOOK_AQUI';
-
+  const MAKE_WEBHOOK_URL = '';
+https://hook.us2.make.com/bwlwlhazolrxxqxktitnlmpuca3q3lgb
   // FORM SUBMIT → Make.com Webhook + WhatsApp fallback
   async function enviarFormulario() {
     const nombre  = document.getElementById('f-nombre').value.trim();
@@ -1993,7 +1993,7 @@
     };
 
     // Si ya tienes webhook configurado, envía a Make
-    if (MAKE_WEBHOOK_URL !== 'TU_URL_WEBHOOK_AQUI') {
+    if (MAKE_WEBHOOK_URL !== 'https://hook.us2.make.com/bwlwlhazolrxxqxktitnlmpuca3q3lgb') {
       try {
         await fetch(MAKE_WEBHOOK_URL, {
           method: 'POST',
