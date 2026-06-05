@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master Truck Academy LLC | Importación Inteligente EE.UU. → México</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #080F1F;
+    --navy-mid: #0D1A33;
+    --navy-light: #162040;
+    --steel: #1E3358;
+    --gold: #C8973A;
+    --gold-light: #E4B860;
+    --gold-pale: #F0D080;
+    --cyan: #2EB8E8;
+    --white: #F4F7FF;
+    --grey: #8A9BBF;
+    --grey-light: #C2CCE0;
+    --red: #D94040;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── UTILITIES ── */
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+  .gold { color: var(--gold); }
+  .cyan { color: var(--cyan); }
+  .tag {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(200,151,58,.35);
+    padding: 5px 14px;
+    border-radius: 2px;
+    margin-bottom: 18px;
+    background: rgba(200,151,58,.07);
+  }
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(34px, 6vw, 54px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+  }
+  .section-sub {
+    font-size: 16px;
+    color: var(--grey-light);
+    line-height: 1.7;
+    max-width: 600px;
+  }
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--gold) 0%, #A07020 100%);
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-gold::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #E4B860 0%, var(--gold) 100%);
+    opacity: 0; transition: opacity .25s;
+  }
+  .btn-gold:hover::before { opacity: 1; }
+  .btn-gold span { position: relative; z-index: 1; }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: 1.5px solid var(--gold);
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .25s;
+  }
+  .btn-outline:hover { background: rgba(200,151,58,.12); }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: .5;
+  }
+
+  /* ── NAVBAR ── */
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 999;
+    padding: 14px 0;
+    transition: all .3s;
+    backdrop-filter: blur(0px);
+  }
+  .navbar.scrolled {
+    background: rgba(8,15,31,.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,151,58,.15);
+    padding: 10px 0;
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo-icon {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, var(--gold), #A07020);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: #fff;
+  }
+  .nav-logo-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1px;
+  }
+  .nav-logo-text span { color: var(--gold); }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--grey-light);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    background: var(--gold);
+    color: #fff;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background .2s;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+  .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  .hamburger span { width: 24px; height: 2px; background: var(--white); display: block; transition: all .3s; }
+  .mobile-menu {
+    display: none;
+    position: fixed; top: 62px; left: 0; right: 0;
+    background: rgba(8,15,31,.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,151,58,.2);
+    padding: 20px;
+    z-index: 998;
+  }
+  .mobile-menu.open { display: block; }
+  .mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .mobile-menu a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--white); text-decoration: none;
+    display: block; padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 80px;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 60% 40%, rgba(30,51,88,.5) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 70%, rgba(200,151,58,.08) 0%, transparent 60%),
+      linear-gradient(160deg, #050C1A 0%, #0B1628 40%, #0D1A33 100%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(200,151,58,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,151,58,.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 80%);
+  }
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(46,184,232,.06) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    animation: pulse 6s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: .6; }
+    50% { transform: scale(1.1); opacity: 1; }
+  }
+  .hero-inner {
+    position: relative; z-index: 2;
+    padding: 60px 0 80px;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(200,151,58,.1);
+    border: 1px solid rgba(200,151,58,.3);
+    border-radius: 100px;
+    padding: 6px 16px;
+    margin-bottom: 28px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    animation: fadeDown .6s ease both;
+  }
+  .hero-badge .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: blink 2s ease infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+  @keyframes fadeDown { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+  .hero-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(42px, 8vw, 80px);
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+    animation: fadeUp .7s .15s ease both;
+  }
+  .hero-title .line2 {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(200,151,58,.6);
+  }
+  .hero-title .accent {
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: clamp(16px, 2.5vw, 19px);
+    color: var(--grey-light);
+    max-width: 560px;
+    margin-bottom: 36px;
+    line-height: 1.7;
+    font-weight: 300;
+    animation: fadeUp .7s .3s ease both;
+  }
+  .hero-sub strong { color: var(--white); font-weight: 500; }
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    animation: fadeUp .7s .45s ease both;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 580px;
+    animation: fadeUp .7s .6s ease both;
+  }
+  .hero-stat {
+    background: rgba(13,26,51,.8);
+    padding: 20px 18px;
+    text-align: center;
+  }
+  .hero-stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+  .hero-stat-label {
+    font-size: 11px;
+    color: var(--grey);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .hero-scroll {
+    position: absolute;
+    bottom: 30px; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: .5;
+    animation: fadeIn 1s 1.2s ease both;
+  }
+  .hero-scroll span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--grey);
+  }
+  .scroll-line {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollAnim 2s ease infinite;
+  }
+  @keyframes scrollAnim {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ── STRIP ── */
+  .strip {
+    background: linear-gradient(90deg, var(--gold) 0%, #A07020 100%);
+    padding: 14px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .strip-track {
+    display: flex;
+    gap: 40px;
+    animation: marquee 30s linear infinite;
+    white-space: nowrap;
+  }
+  .strip-item {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(0,0,0,.7);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .strip-item::after { content: '◆'; font-size: 8px; }
+  @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  /* ── PROPUESTA DE VALOR ── */
+  .section { padding: 90px 0; }
+  .diferencial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .diferencial-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .d-card {
+    background: var(--navy-mid);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 6px;
+    padding: 22px 18px;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .d-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity .3s;
+  }
+  .d-card:hover { border-color: rgba(200,151,58,.25); transform: translateY(-3px); }
+  .d-card:hover::before { opacity: 1; }
+  .d-card-icon {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  .d-card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .d-card-text {
+    font-size: 13px;
+    color: var(--grey);
+    line-height: 1.5;
+  }
+  .diferencial-content .section-sub { margin-bottom: 28px; }
+  .check-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--grey-light);
+  }
+  .check-list .ck {
+    flex-shrink: 0;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: rgba(200,151,58,.15);
+    border: 1px solid rgba(200,151,58,.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px;
+    color: var(--gold);
+    margin-top: 1px;
+  }
+
+  /* ── INVENTARIO ── */
+  .inventario { background: var(--navy-mid); border-top: 1px solid rgba(255,255,255,.05); border-bottom: 1px solid rgba(255,255,255,.05); }
+  .inv-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .inv-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+  .inv-card {
+    background: var(--navy);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all .3s;
+  }
+  .inv-card:hover { border-color: rgba(200,151,58,.3); transform: translateY(-4px); }
+  .inv-card-badge {
+    background: linear-gradient(90deg, var(--gold), #A07020);
+    padding: 5px 12px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .inv-card-body { padding: 16px; }
+  .inv-card-model {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .inv-card-year {
+    font-size: 12px;
+    color: var(--grey);
+    margin-bottom: 14px;
+  }
+  .inv-card-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--gold);
+    letter-spacing: 1px;
+  }
+  .inv-card-save {
+    font-size: 12px;
+    color: #4ADE80;
+    margin-top: 2px;
+  }
+  .inv-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 12px;
+  }
+  .inv-tag {
+    font-size: 10px;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    background: rgba(46,184,232,.1);
+    border: 1px solid rgba(46,184,232,.2);
+    color: var(--cyan);
+  }
+  .inv-disclaimer {
+    text-align: center;
+    font-size: 13px;
+    color: var(--grey);
+    padding: 16px;
+    border: 1px dashed rgba(255,255,255,.1);
+    border-radius: 4px;
+  }
+
+  /* ── TECNOLOGÍA ── */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .tech-visual {
+    background: var(--navy-mid);
+    border: 1px solid rgba(200,151,58,.15);
+    border-radius: 8px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tech-visual::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(46,184,232,.06) 0%, transparent 60%);
+  }
+  .tech-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative; z-index: 1;
+  }
+  .tech-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .tech-step-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tech-step-num {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), #A07020);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .tech-step-line {
+    width: 1px; flex: 1;
+    min-height: 30px;
+    background: linear-gradient(to bottom, var(--gold), rgba(200,151,58,.1));
+    margin: 4px 0;
+  }
+  .tech-step-content {
+    padding: 2px 0 28px;
+  }
+  .tech-step-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .tech-step-text {
+    font-size: 13px;
+    color: var(--grey);
+    line-height: 1.5;
+  }
+  .tech-badge-make {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(46,184,232,.08);
+    border: 1px solid rgba(46,184,232,.2);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: var(--cyan);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  .tech-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 30px;
+  }
+  .tech-feature {
+    background: var(--navy-mid);
+    border: 1px solid rgba(255,255,255,.05);
+    border-radius: 6px;
+    padding: 18px;
+    transition: border-color .3s;
+  }
+  .tech-feature:hover { border-color: rgba(46,184,232,.3); }
+  .tech-feature-icon { font-size: 22px; margin-bottom: 8px; }
+  .tech-feature-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .tech-feature-text { font-size: 12px; color: var(--grey); line-height: 1.5; }
+
+  /* ── FINANCIAL / ROI ── */
+  .roi { background: var(--navy-mid); }
+  .roi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 50px;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .roi-numbers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .roi-box {
+    background: var(--navy);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 6px;
+    padding: 22px 16px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .roi-box.featured {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(200,151,58,.12), rgba(200,151,58,.04));
+    border-color: rgba(200,151,58,.3);
+  }
+  .roi-box-label {
+    font-size: 11px;
+    color: var(--grey);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .roi-box-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    color: var(--gold);
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+  .roi-box-num.big { font-size: 52px; }
+  .roi-box-sub {
+    font-size: 12px;
+    color: var(--grey-light);
+    margin-top: 4px;
+  }
+  .roi-content .section-sub { margin-bottom: 28px; }
+  .roi-process {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .roi-step {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--navy);
+    border: 1px solid rgba(255,255,255,.05);
+    border-radius: 5px;
+    padding: 14px 16px;
+  }
+  .roi-step-icon {
+    font-size: 20px;
+    width: 40px; height: 40px;
+    background: rgba(200,151,58,.1);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .roi-step-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .roi-step-text { font-size: 12px; color: var(--grey); }
+
+  /* ── GARANTÍA LEGAL ── */
+  .legal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+  }
+  .legal-card {
+    background: var(--navy-mid);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 6px;
+    padding: 28px 22px;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s;
+  }
+  .legal-card:hover { border-color: rgba(200,151,58,.25); transform: translateY(-4px); }
+  .legal-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--gold);
+    transition: width .4s;
+  }
+  .legal-card:hover::after { width: 100%; }
+  .legal-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  .legal-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+  .legal-text { font-size: 14px; color: var(--grey); line-height: 1.6; }
+
+  /* ── SOCIO ESTRATÉGICO ── */
+  .socio { background: var(--navy-mid); }
+  .socio-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .socio-inner .section-title { margin-bottom: 20px; }
+  .socio-inner .section-sub { margin: 0 auto 40px; }
+  .socio-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    text-align: left;
+  }
+  .socio-pillar {
+    background: var(--navy);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 6px;
+    padding: 22px 18px;
+  }
+  .socio-pillar-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: rgba(200,151,58,.2);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .socio-pillar-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .socio-pillar-text { font-size: 13px; color: var(--grey); line-height: 1.5; }
+
+  /* ── FAQ ── */
+  .faq-list {
+    max-width: 760px;
+    margin: 40px auto 0;
+  }
+  .faq-item {
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    gap: 16px;
+    color: var(--white);
+  }
+  .faq-q-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: .3px;
+    line-height: 1.3;
+  }
+  .faq-arrow {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,151,58,.4);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold);
+    font-size: 12px;
+    flex-shrink: 0;
+    transition: transform .3s;
+  }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+  .faq-a {
+    font-size: 14px;
+    color: var(--grey-light);
+    line-height: 1.7;
+    padding: 0 0 20px;
+    display: none;
+    max-width: 640px;
+  }
+  .faq-item.open .faq-a { display: block; }
+
+  /* ── CONTACT ── */
+  .contact { position: relative; overflow: hidden; }
+  .contact::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(200,151,58,.08), transparent 60%);
+  }
+  .contact-inner {
+    position: relative; z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .contact-info { }
+  .contact-info .section-title { margin-bottom: 20px; }
+  .contact-info .section-sub { margin-bottom: 36px; }
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: var(--navy-mid);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all .2s;
+  }
+  .contact-method:hover { border-color: rgba(200,151,58,.3); background: rgba(200,151,58,.05); }
+  .contact-method-icon {
+    font-size: 20px;
+    width: 40px; height: 40px;
+    background: rgba(200,151,58,.1);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-method-label {
+    font-size: 11px;
+    color: var(--grey);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .contact-method-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+  }
+  .contact-form {
+    background: var(--navy-mid);
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 8px;
+    padding: 32px 28px;
+  }
+  .form-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .form-sub { font-size: 13px; color: var(--grey); margin-bottom: 24px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    color: var(--grey);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: var(--navy);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 4px;
+    padding: 12px 14px;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+  .form-group select option { background: var(--navy-mid); }
+  .form-group textarea { height: 80px; resize: vertical; }
+  .form-submit {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, var(--gold), #A07020);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity .2s;
+    margin-top: 4px;
+  }
+  .form-submit:hover { opacity: .9; }
+  .form-note {
+    font-size: 11px;
+    color: var(--grey);
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid rgba(255,255,255,.05);
+    padding: 40px 0 24px;
+    background: #050C1A;
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 36px;
+  }
+  .footer-brand-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .footer-brand-logo span { color: var(--gold); }
+  .footer-desc { font-size: 13px; color: var(--grey); line-height: 1.7; max-width: 280px; margin-bottom: 18px; }
+  .footer-legal-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .flb {
+    font-size: 10px;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    border: 1px solid rgba(255,255,255,.1);
+    color: var(--grey);
+  }
+  .footer-col-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul a {
+    font-size: 13px;
+    color: var(--grey);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .footer-col ul a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.05);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-bottom p {
+    font-size: 12px;
+    color: var(--grey);
+  }
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+  .footer-links a {
+    font-size: 12px;
+    color: var(--grey);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ── FLOATING WA BUTTON ── */
+  .wa-float {
+    position: fixed;
+    bottom: 28px; right: 22px;
+    z-index: 995;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 100px;
+    padding: 14px 20px;
+    box-shadow: 0 8px 32px rgba(37,211,102,.4);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    animation: waPop .6s 1.5s ease both;
+    transition: transform .2s, box-shadow .2s;
+  }
+  @keyframes waPop { from{transform:scale(0);opacity:0} to{transform:scale(1);opacity:1} }
+  .wa-float:hover { transform: scale(1.05); box-shadow: 0 12px 40px rgba(37,211,102,.55); }
+  .wa-float svg { width: 22px; height: 22px; fill: #fff; }
+  .wa-text { display: none; }
+
+  /* ── FUNNEL BANNER ── */
+  .funnel-banner {
+    background: linear-gradient(90deg, rgba(13,26,51,1) 0%, rgba(22,32,64,1) 50%, rgba(13,26,51,1) 100%);
+    border-top: 1px solid rgba(200,151,58,.15);
+    border-bottom: 1px solid rgba(200,151,58,.15);
+    padding: 28px 0;
+    overflow: hidden;
+  }
+  .funnel-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--grey);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .funnel-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .funnel-step {
+    text-align: center;
+    padding: 14px 22px;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,.07);
+    background: rgba(255,255,255,.02);
+    min-width: 140px;
+    transition: all .3s;
+  }
+  .funnel-step:hover { border-color: rgba(200,151,58,.3); background: rgba(200,151,58,.05); }
+  .funnel-step.active {
+    border-color: rgba(200,151,58,.5);
+    background: rgba(200,151,58,.1);
+  }
+  .funnel-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: rgba(200,151,58,.35);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .funnel-step.active .funnel-num { color: var(--gold); }
+  .funnel-step-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: .5px;
+  }
+  .funnel-step.active .funnel-step-title { color: var(--gold-light); }
+  .funnel-step-sub {
+    font-size: 11px;
+    color: var(--grey);
+    margin-top: 3px;
+  }
+  .funnel-arrow {
+    font-size: 20px;
+    color: rgba(200,151,58,.35);
+    font-weight: 300;
+    padding: 0 4px;
+  }
+  @media (max-width: 600px) {
+    .funnel-steps { gap: 8px; }
+    .funnel-step { min-width: 110px; padding: 10px 14px; }
+    .funnel-arrow { display: none; }
+    .funnel-step-title { font-size: 16px; }
+  }
+
+  /* ── ANIMATIONS ON SCROLL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: all .65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-d1 { transition-delay: .1s; }
+  .reveal-d2 { transition-delay: .2s; }
+  .reveal-d3 { transition-delay: .3s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .diferencial-grid,
+    .tech-grid,
+    .roi-grid,
+    .contact-inner { grid-template-columns: 1fr; gap: 36px; }
+    .inv-cards { grid-template-columns: 1fr 1fr; }
+    .legal-grid { grid-template-columns: 1fr; }
+    .socio-pillars { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .wa-float { bottom: 20px; right: 16px; padding: 14px; border-radius: 50%; }
+    .wa-float .wa-text { display: none; }
+  }
+  @media (max-width: 600px) {
+    .hero-stats { grid-template-columns: 1fr; max-width: 100%; }
+    .inv-cards { grid-template-columns: 1fr; }
+    .diferencial-cards { grid-template-columns: 1fr; }
+    .tech-features { grid-template-columns: 1fr; }
+    .roi-numbers { grid-template-columns: 1fr 1fr; }
+    .section { padding: 60px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">MT</div>
+      <span class="nav-logo-text">MASTER <span>TRUCK</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#diferencial">Metodología</a></li>
+      <li><a href="#inventario">Inventario</a></li>
+      <li><a href="#tecnologia">Tecnología</a></li>
+      <li><a href="#roi">ROI</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#contacto" class="nav-cta">Cotizar ahora</a>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="#diferencial" onclick="toggleMenu()">Metodología</a></li>
+    <li><a href="#inventario" onclick="toggleMenu()">Inventario</a></li>
+    <li><a href="#tecnologia" onclick="toggleMenu()">Tecnología</a></li>
+    <li><a href="#roi" onclick="toggleMenu()">ROI</a></li>
+    <li><a href="#faq" onclick="toggleMenu()">FAQ</a></li>
+    <li><a href="#contacto" onclick="toggleMenu()">Cotizar Ahora →</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="container hero-inner">
+    <div class="hero-badge">
+      <div class="dot"></div>
+      Importación Legal EE.UU. → México · Pedimento VU · Placas Federales
+    </div>
+    <h1 class="hero-title">
+      Optimización<br>
+      <span class="line2">Patrimonial en</span><br>
+      <span class="accent">Equipo Pesado</span>
+    </h1>
+    <p class="hero-sub">
+      Gestionamos la <strong>adquisición, logística y nacionalización</strong> de tu flota con tecnología de automatización y rigor legal. Ahorros proyectados de hasta <strong>$615,000 MXN por unidad</strong>.
+    </p>
+    <div class="hero-ctas">
+      <a href="#contacto" class="btn-gold"><span>🔍 Inicia tu Análisis de ROI</span></a>
+      <a href="#inventario" class="btn-outline">Ver Inventario</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num" id="counter1">0</div>
+        <div class="hero-stat-label">Unidades Importadas</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">$615K</div>
+        <div class="hero-stat-label">Ahorro máx. por unidad</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Legal &amp; Auditable</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-track">
+    <span class="strip-item">Pedimento Ventanilla Única</span>
+    <span class="strip-item">Factura a Nombre del Cliente</span>
+    <span class="strip-item">Placa Federal FULL</span>
+    <span class="strip-item">NOM-012 · NOM-035 · NOM-044</span>
+    <span class="strip-item">Freightliner · Kenworth · Peterbilt</span>
+    <span class="strip-item">Detroit · Cummins · Eaton-Fuller</span>
+    <span class="strip-item">Automatización Make.com</span>
+    <span class="strip-item">Pedimento Ventanilla Única</span>
+    <span class="strip-item">Factura a Nombre del Cliente</span>
+    <span class="strip-item">Placa Federal FULL</span>
+    <span class="strip-item">NOM-012 · NOM-035 · NOM-044</span>
+    <span class="strip-item">Freightliner · Kenworth · Peterbilt</span>
+    <span class="strip-item">Detroit · Cummins · Eaton-Fuller</span>
+    <span class="strip-item">Automatización Make.com</span>
+  </div>
+</div>
+
+<!-- PROPUESTA DE VALOR -->
+<section class="section" id="diferencial">
+  <div class="container">
+    <div class="diferencial-grid">
+      <div class="diferencial-cards reveal">
+        <div class="d-card">
+          <div class="d-card-icon">🔍</div>
+          <div class="d-card-title">Búsqueda Técnica</div>
+          <div class="d-card-text">Identificamos unidades con motores Detroit, Cummins ISX/ISB, transmisiones Eaton-Fuller que cumplen tu perfil operativo.</div>
+        </div>
+        <div class="d-card">
+          <div class="d-card-icon">📋</div>
+          <div class="d-card-title">Ventanilla Única VU</div>
+          <div class="d-card-text">Pedimento tipo VU con placa federal FULL. Circula libremente en todo el territorio nacional sin restricciones.</div>
+        </div>
+        <div class="d-card">
+          <div class="d-card-icon">⚖️</div>
+          <div class="d-card-title">Blindaje Notarial</div>
+          <div class="d-card-text">Contratos respaldados por escritura pública. Cada operación es 100% auditable ante SAT, SCT y autoridades mexicanas.</div>
+        </div>
+        <div class="d-card">
+          <div class="d-card-icon">🤝</div>
+          <div class="d-card-title">Manos Fuera</div>
+          <div class="d-card-text">El cliente paga directo al vendedor en EE. UU. y recibe el título a su nombre. Sin intermediarios que toquen tu capital.</div>
+        </div>
+      </div>
+      <div class="diferencial-content reveal reveal-d1">
+        <div class="tag">El Diferencial · Gestión Integral</div>
+        <h2 class="section-title">No vendemos camiones.<br><span class="gold">Gestionamos tu inversión.</span></h2>
+        <p class="section-sub" style="margin: 16px 0 24px;">
+          Somos la firma especializada que acompaña cada etapa: desde la evaluación técnica y financiera en origen hasta la entrega con placa federal en tu ubicación.
+        </p>
+        <ul class="check-list">
+          <li><span class="ck">✓</span> Análisis de mercado binacional antes de cada compra</li>
+          <li><span class="ck">✓</span> Verificación mecánica, historial Carfax y NMVTIS</li>
+          <li><span class="ck">✓</span> Cumplimiento NOMs 012, 035 y 044 garantizado</li>
+          <li><span class="ck">✓</span> Coordinación logística frontera (Tijuana / Mexicali)</li>
+          <li><span class="ck">✓</span> Traslado asegurado a medio país: $30,000–$45,000 MXN</li>
+          <li><span class="ck">✓</span> Asesoría fiscal RESICO para activación del activo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVENTARIO -->
+<section class="section inventario" id="inventario">
+  <div class="container">
+    <div class="inv-header">
+      <div class="reveal">
+        <div class="tag">Inventario Especial 2026</div>
+        <h2 class="section-title">Unidades Disponibles<br><span class="gold">2017 – 2018</span></h2>
+      </div>
+      <a href="#contacto" class="btn-outline reveal reveal-d1">Ver inventario completo →</a>
+    </div>
+    <div class="inv-cards">
+      <!-- Card 1 -->
+      <div class="inv-card reveal">
+        <div class="inv-card-badge">Mayor Ahorro</div>
+        <div class="inv-card-body">
+          <div class="inv-card-model">Freightliner Cascadia 125</div>
+          <div class="inv-card-year">2017 · Blanco · Detroit 475 HP · Eaton-Fuller</div>
+          <div class="inv-card-price">$573,309 MXN</div>
+          <div class="inv-card-save">↓ Ahorro vs. mercado: ~$426,691 MXN</div>
+          <div class="inv-card-tags">
+            <span class="inv-tag">Pedimento VU</span>
+            <span class="inv-tag">Placa Federal</span>
+            <span class="inv-tag">751,714 mi</span>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="inv-card reveal reveal-d1">
+        <div class="inv-card-badge">Kenworth Premium</div>
+        <div class="inv-card-body">
+          <div class="inv-card-model">Kenworth T680</div>
+          <div class="inv-card-year">2018 · Verde · Motor PACCAR</div>
+          <div class="inv-card-price">$785,000 MXN</div>
+          <div class="inv-card-save">↓ Ahorro vs. mercado: ~$615,000 MXN</div>
+          <div class="inv-card-tags">
+            <span class="inv-tag">Pedimento VU</span>
+            <span class="inv-tag">Placa Federal</span>
+            <span class="inv-tag">Valor máximo</span>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="inv-card reveal reveal-d2">
+        <div class="inv-card-badge">Peterbilt</div>
+        <div class="inv-card-body">
+          <div class="inv-card-model">Peterbilt 579</div>
+          <div class="inv-card-year">2017 · Rojo · Cummins ISX</div>
+          <div class="inv-card-price">$915,861 MXN</div>
+          <div class="inv-card-save">↓ Ahorro vs. mercado: ~$284,139 MXN</div>
+          <div class="inv-card-tags">
+            <span class="inv-tag">Pedimento VU</span>
+            <span class="inv-tag">Placa Federal</span>
+            <span class="inv-tag">T-MEC</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="inv-disclaimer reveal">
+      📌 Precio puesto en frontera (Tijuana / Mexicali). Traslado a medio país: $30,000–$45,000 MXN adicionales + seguro. Inventario completo: 18 unidades disponibles hoy, 10 de mayo de 2026.
+    </div>
+  </div>
+</section>
+
+<!-- TECNOLOGÍA -->
+<section class="section" id="tecnologia">
+  <div class="container">
+    <div class="tech-grid">
+      <div class="reveal">
+        <div class="tag">Ecosistema Tecnológico</div>
+        <h2 class="section-title">Gestión Inteligente:<br><span class="gold">Tecnología al Servicio<br>de tu Inversión</span></h2>
+        <p class="section-sub" style="margin: 16px 0 28px;">
+          En un mercado multimillonario, la diferencia entre una compra y una inversión estratégica radica en la información en tiempo real.
+        </p>
+        <div class="tech-badge-make">⚡ Automatizado con Make.com &amp; API Anthropic</div>
+        <div class="tech-features">
+          <div class="tech-feature">
+            <div class="tech-feature-icon">📱</div>
+            <div class="tech-feature-title">APP de Seguimiento</div>
+            <div class="tech-feature-text">Visualiza el estado de tu importación, documentos y ROI proyectado en tiempo real desde tu celular.</div>
+          </div>
+          <div class="tech-feature">
+            <div class="tech-feature-icon">🤖</div>
+            <div class="tech-feature-title">IA de Análisis</div>
+            <div class="tech-feature-text">Motor de análisis de mercado que compara precios en EE.UU. vs. México automáticamente.</div>
+          </div>
+          <div class="tech-feature">
+            <div class="tech-feature-icon">📄</div>
+            <div class="tech-feature-title">Gestión Documental</div>
+            <div class="tech-feature-text">Pedimentos, facturas y contratos generados y almacenados digitalmente. Acceso 24/7.</div>
+          </div>
+          <div class="tech-feature">
+            <div class="tech-feature-icon">🔔</div>
+            <div class="tech-feature-title">Alertas Automáticas</div>
+            <div class="tech-feature-text">WhatsApp y email con actualizaciones en cada etapa: compra, frontera, liberación, entrega.</div>
+          </div>
+        </div>
+      </div>
+      <div class="tech-visual reveal reveal-d1">
+        <div class="tech-flow">
+          <div class="tech-step">
+            <div class="tech-step-left">
+              <div class="tech-step-num">01</div>
+              <div class="tech-step-line"></div>
+            </div>
+            <div class="tech-step-content">
+              <div class="tech-step-title">Análisis y Búsqueda</div>
+              <div class="tech-step-text">IA escanea subastas y dealers en EE.UU. filtrando por modelo, millaje, motor y precio objetivo.</div>
+            </div>
+          </div>
+          <div class="tech-step">
+            <div class="tech-step-left">
+              <div class="tech-step-num">02</div>
+              <div class="tech-step-line"></div>
+            </div>
+            <div class="tech-step-content">
+              <div class="tech-step-title">Verificación Técnica</div>
+              <div class="tech-step-text">Carfax, NMVTIS, inspección mecánica. Reporte completo al cliente antes de comprometer capital.</div>
+            </div>
+          </div>
+          <div class="tech-step">
+            <div class="tech-step-left">
+              <div class="tech-step-num">03</div>
+              <div class="tech-step-line"></div>
+            </div>
+            <div class="tech-step-content">
+              <div class="tech-step-title">Logística Frontera</div>
+              <div class="tech-step-text">Coordinación de transporte hasta aduana, tramitación de Pedimento VU y liberación en Tijuana / Mexicali.</div>
+            </div>
+          </div>
+          <div class="tech-step">
+            <div class="tech-step-left">
+              <div class="tech-step-num">04</div>
+              <div class="tech-step-line"></div>
+            </div>
+            <div class="tech-step-content">
+              <div class="tech-step-title">Entrega con Placa Federal</div>
+              <div class="tech-step-text">La unidad llega a tu ubicación con factura a tu nombre, placa federal y toda la documentación para operar.</div>
+            </div>
+          </div>
+          <div class="tech-step">
+            <div class="tech-step-left">
+              <div class="tech-step-num">05</div>
+            </div>
+            <div class="tech-step-content">
+              <div class="tech-step-title">Soporte Post-Entrega</div>
+              <div class="tech-step-text">Asesoría fiscal RESICO para activación del activo y atención continua vía WhatsApp.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI / FINANCIERO -->
+<section class="section roi" id="roi">
+  <div class="container">
+    <div class="roi-grid">
+      <div class="reveal">
+        <div class="tag">Análisis Financiero</div>
+        <h2 class="section-title">Tu inversión,<br><span class="gold">blindada y rentable.</span></h2>
+        <p class="section-sub" style="margin: 16px 0 28px;">
+          El negocio no es solo comprar un camión: es una inversión patrimonial con proyección de ahorro documentada, activo a nombre del cliente y valor de reventa superior.
+        </p>
+        <div class="roi-process">
+          <div class="roi-step">
+            <div class="roi-step-icon">💰</div>
+            <div>
+              <div class="roi-step-title">Capital protegido desde el día 1</div>
+              <div class="roi-step-text">El cliente paga directo al vendedor en EE.UU. Nosotros cobramos únicamente la fee de gestión.</div>
+            </div>
+          </div>
+          <div class="roi-step">
+            <div class="roi-step-icon">📊</div>
+            <div>
+              <div class="roi-step-title">Balance financiero antes de decidir</div>
+              <div class="roi-step-text">Análisis de 4 fases: precio origen, aranceles T-MEC, costos logísticos y precio mercado destino.</div>
+            </div>
+          </div>
+          <div class="roi-step">
+            <div class="roi-step-icon">🏛️</div>
+            <div>
+              <div class="roi-step-title">Activo registrable en tu empresa</div>
+              <div class="roi-step-text">Factura a tu nombre. La unidad puede revenderse, financiarse o ponerse como activo empresarial.</div>
+            </div>
+          </div>
+          <div class="roi-step">
+            <div class="roi-step-icon">🔄</div>
+            <div>
+              <div class="roi-step-title">Mayor valor de reventa</div>
+              <div class="roi-step-text">El Pedimento VU y la placa federal completa elevan el valor de mercado secundario frente a otros pedimentos.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="roi-numbers reveal reveal-d1">
+        <div class="roi-box featured">
+          <div class="roi-box-label">Ahorro Promedio por Unidad</div>
+          <div class="roi-box-num big">$277,187</div>
+          <div class="roi-box-sub">pesos mexicanos vs. precio de mercado nacional</div>
+        </div>
+        <div class="roi-box">
+          <div class="roi-box-label">Ahorro Máximo Registrado</div>
+          <div class="roi-box-num">$615K</div>
+          <div class="roi-box-sub">Kenworth T680 2018</div>
+        </div>
+        <div class="roi-box">
+          <div class="roi-box-label">Precio Mínimo Frontera</div>
+          <div class="roi-box-num">$573K</div>
+          <div class="roi-box-sub">Freightliner Cascadia 2017</div>
+        </div>
+        <div class="roi-box">
+          <div class="roi-box-label">Unidades en Inventario</div>
+          <div class="roi-box-num">18</div>
+          <div class="roi-box-sub">Disponibles hoy, mayo 2026</div>
+        </div>
+        <div class="roi-box">
+          <div class="roi-box-label">Fee de Gestión</div>
+          <div class="roi-box-num">Fija</div>
+          <div class="roi-box-sub">Sin comisión oculta sobre el precio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTÍA LEGAL -->
+<section class="section" id="garantia">
+  <div class="container">
+    <div style="text-align:center; max-width:600px; margin:0 auto 0;" class="reveal">
+      <div class="tag">Garantía Legal</div>
+      <h2 class="section-title">Cada paso, <span class="gold">blindado por ley.</span></h2>
+      <p class="section-sub" style="margin: 14px auto 0;">
+        Operamos bajo estricto cumplimiento de regulaciones mexicanas y estadounidenses. Cero zonas grises.
+      </p>
+    </div>
+    <div class="legal-grid">
+      <div class="legal-card reveal">
+        <div class="legal-icon">📜</div>
+        <div class="legal-title">Pedimento Tipo VU</div>
+        <div class="legal-text">Ventanilla Única oficial SAT/VUCEM. La forma más robusta de importación permanente, con placa federal sin restricciones de ruta o zona.</div>
+      </div>
+      <div class="legal-card reveal reveal-d1">
+        <div class="legal-icon">🏦</div>
+        <div class="legal-title">Transferencia Directa</div>
+        <div class="legal-text">El cliente transfiere el precio de compra directo al vendedor en EE.UU. Master Truck Academy opera con fee de gestión fija, documentada.</div>
+      </div>
+      <div class="legal-card reveal reveal-d2">
+        <div class="legal-icon">🔒</div>
+        <div class="legal-title">Contratos Notariales</div>
+        <div class="legal-text">Contrato de gestión y compraventa con respaldo notarial. Auditable ante cualquier autoridad fiscal o legal de México y EE.UU.</div>
+      </div>
+      <div class="legal-card reveal">
+        <div class="legal-icon">✅</div>
+        <div class="legal-title">NOMs Verificadas</div>
+        <div class="legal-text">Verificación de cumplimiento NOM-012 (peso y dimensiones), NOM-035 y NOM-044 (emisiones) antes de cada operación.</div>
+      </div>
+      <div class="legal-card reveal reveal-d1">
+        <div class="legal-icon">📑</div>
+        <div class="legal-title">Factura a tu Nombre</div>
+        <div class="legal-text">El Pedimento VU genera factura directamente al nombre del comprador. La unidad es registrable como activo empresarial o personal.</div>
+      </div>
+      <div class="legal-card reveal reveal-d2">
+        <div class="legal-icon">🛡️</div>
+        <div class="legal-title">Aviso de Privacidad</div>
+        <div class="legal-text">Tus datos y operaciones financieras se manejan bajo la Ley Federal de Protección de Datos Personales (LFPDPPP). 100% confidencial.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO 4 ETAPAS BANNER -->
+<div class="funnel-banner">
+  <div class="container">
+    <div class="funnel-label">Así funciona nuestra metodología</div>
+    <div class="funnel-steps">
+      <div class="funnel-step">
+        <div class="funnel-num">01</div>
+        <div class="funnel-step-title">Atraer</div>
+        <div class="funnel-step-sub">Hero / Diseño de impacto</div>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-num">02</div>
+        <div class="funnel-step-title">Educar</div>
+        <div class="funnel-step-sub">ROI / Tecnología / Proceso</div>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step">
+        <div class="funnel-num">03</div>
+        <div class="funnel-step-title">Convencer</div>
+        <div class="funnel-step-sub">Garantía Legal / FAQ</div>
+      </div>
+      <div class="funnel-arrow">→</div>
+      <div class="funnel-step active">
+        <div class="funnel-num">04</div>
+        <div class="funnel-step-title">Convertir</div>
+        <div class="funnel-step-sub">Contacto / WhatsApp</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SOCIO ESTRATÉGICO -->
+<section class="section socio" id="socio">
+  <div class="container">
+    <div class="socio-inner">
+      <div class="reveal">
+        <div class="tag" style="margin:0 auto 18px; display:table;">Asociación Estratégica</div>
+        <h2 class="section-title">No somos tu proveedor.<br><span class="gold">Somos tu socio de capital.</span></h2>
+        <p class="section-sub" style="margin: 16px auto 36px;">
+          Nuestro modelo protege el capital del cliente primero. No importamos un camión; creamos sistemas que generan libertad patrimonial para tu familia a través de inversiones sanas y legalmente blindadas.
+        </p>
+      </div>
+      <div class="socio-pillars">
+        <div class="socio-pillar reveal">
+          <div class="socio-pillar-num">01</div>
+          <div class="socio-pillar-title">Transparencia Total</div>
+          <div class="socio-pillar-text">Te mostramos el costo real en EE.UU., el arancel, la logística y nuestra fee. Sin número escondido. Tú decides con información completa.</div>
+        </div>
+        <div class="socio-pillar reveal reveal-d1">
+          <div class="socio-pillar-num">02</div>
+          <div class="socio-pillar-title">Alineación de Intereses</div>
+          <div class="socio-pillar-text">Cobramos fee fija. No ganamos más si el camión cuesta más. Nuestro incentivo es que tu inversión sea la más eficiente del mercado.</div>
+        </div>
+        <div class="socio-pillar reveal reveal-d2">
+          <div class="socio-pillar-num">03</div>
+          <div class="socio-pillar-title">Visión de Largo Plazo</div>
+          <div class="socio-pillar-text">El activo queda a tu nombre, financiable, revendible, deducible. Construimos patrimonio contigo, no solo completamos una transacción.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div style="text-align:center; max-width:600px; margin:0 auto 0;" class="reveal">
+      <div class="tag">Preguntas Frecuentes</div>
+      <h2 class="section-title">Todo lo que necesitas <span class="gold">saber.</span></h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item open">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">¿Qué es el Pedimento tipo VU (Ventanilla Única) y por qué es mejor?</span>
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          El Pedimento VU es la forma de importación permanente más completa. Genera una factura a nombre del comprador y otorga placa federal que circula libremente en todo el territorio nacional, sin restricciones de ruta, zona ni horario. La única restricción es no ingresar a zonas de aduana, aeropuertos o puertos marítimos para evitar cuotas. Frente a otros pedimentos, tiene mayor valor de reventa y elimina riesgos de operación.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">¿Qué modelos califican para aranceles preferenciales T-MEC?</span>
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          Bajo el T-MEC (antes TLCAN/NAFTA), los vehículos de carga fabricados en EE.UU., Canadá o México con contenido regional suficiente pueden calificar para arancel 0% o reducido. Los modelos 2017-2018 que gestionamos —Freightliner Cascadia, Kenworth T680, Peterbilt 579— fueron fabricados en plantas norteamericanas y típicamente califican. Verificamos el origen de cada unidad antes de iniciar la operación.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">¿Tengo que viajar a EE.UU. para comprar?</span>
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          No. Toda la operación se gestiona de manera remota. El cliente paga directamente al vendedor en EE.UU. mediante transferencia bancaria internacional (BBVA, Citibanamex u otro banco con servicio SWIFT). Nosotros coordinamos la inspección física, la compra, la logística hasta frontera y la entrega en tu ubicación en México.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">¿Cuánto tiempo tarda el proceso completo?</span>
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          El tiempo estimado desde la confirmación de compra hasta la entrega en tu ubicación es de 3 a 6 semanas. Depende de la distancia entre el proveedor y la frontera, la disponibilidad de cupos en aduana y el traslado interno. Te mantenemos informado en cada etapa vía WhatsApp y nuestra plataforma digital.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">¿Qué incluye el precio "puesto en frontera"?</span>
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          El precio en frontera incluye: precio de compra en EE.UU., arancel de importación, trámite del Pedimento VU, derechos de tramitación aduanal (DTA), gestión documental y nuestra fee de gestión. No incluye el traslado de frontera a tu ubicación (cotizado adicional: $30,000–$45,000 MXN según destino) ni el seguro de traslado.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">¿Cómo puedo verificar la legalidad de la operación?</span>
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          Toda la operación es auditable en tiempo real. Puedes verificar el Pedimento en el portal del SAT con el número de documento. La factura es electrónica (CFDI) a tu nombre. El contrato de gestión tiene respaldo notarial. Si lo requieres, puedes contratar un agente aduanal o abogado externo de tu confianza para revisar cada documento. No tenemos nada que ocultar.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">¿Es legal importar camiones de modelos recientes desde EE.UU.?</span>
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          Sí, absolutamente. Nos especializamos en modelos 2017–2018 que cumplen con la normativa actual de importación definitiva bajo el T-MEC. A diferencia de los vehículos "chocolate" con restricciones anteriores, el Pedimento VU que tramitamos es importación <strong style="color:var(--white);">permanente y sin restricciones</strong>: la unidad queda regularizada con CFDI, placa federal y libre de cualquier cuestionamiento legal futuro.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">¿Puedo financiar o poner como activo la unidad después de importarla?</span>
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          Sí. Al quedar la factura a tu nombre con Pedimento VU, la unidad tiene el mismo estatus legal que cualquier vehículo adquirido en México. Puede presentarse como garantía ante bancos (BBVA, Banorte, UNIFIN, arrendadoras) para obtener crédito o arrendamiento puro. También se registra como activo fijo de tu empresa para depreciación fiscal bajo régimen RESICO o General de Ley.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section contact" id="contacto">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-info reveal">
+        <div class="tag">Comienza Hoy</div>
+        <h2 class="section-title">Inicia tu proyección<br><span class="gold">de ahorro y crecimiento.</span></h2>
+        <p class="section-sub" style="margin: 16px 0 32px;">
+          Cada día que pasa es un día que el mercado en EE.UU. sube. Solicita tu análisis gratuito hoy y conoce cuánto puedes ahorrar.
+        </p>
+        <div class="contact-methods">
+          <a href="https://wa.me/524521972141?text=Hola,%20me%20interesa%20importar%20un%20camión%20desde%20EE.UU.%20Quisiera%20una%20cotización." class="contact-method" target="_blank">
+            <div class="contact-method-icon">💬</div>
+            <div>
+              <div class="contact-method-label">WhatsApp · Cotizaciones</div>
+              <div class="contact-method-val">+52 452 197 2141</div>
+            </div>
+          </a>
+          <a href="mailto:vendomycamion@gmail.com" class="contact-method">
+            <div class="contact-method-icon">📧</div>
+            <div>
+              <div class="contact-method-label">Email · Gestión Comercial</div>
+              <div class="contact-method-val">vendomycamion@gmail.com</div>
+            </div>
+          </a>
+          <a href="mailto:mastertruckacademy@gmail.com" class="contact-method">
+            <div class="contact-method-icon">🎓</div>
+            <div>
+              <div class="contact-method-label">Email · Academia y Cursos</div>
+              <div class="contact-method-val">mastertruckacademy@gmail.com</div>
+            </div>
+          </a>
+        </div>
+        <p style="font-size:13px; color:var(--grey);">
+          <strong style="color:var(--white);">Ing. Luis Michel Hernández Farías</strong><br>
+          Master Truck Academy LLC · MTT Infraestructuras S.A. de C.V.<br>
+          Uruapan, Michoacán · RFC: HEFL950417K42
+        </p>
+      </div>
+      <div class="contact-form reveal reveal-d1">
+        <div class="form-title">Análisis de Mercado y ROI</div>
+        <div class="form-sub">Gratuito · Sin compromiso · Respuesta en menos de 24 horas</div>
+        <div class="form-group">
+          <label>Nombre completo</label>
+          <input type="text" placeholder="Tu nombre o razón social" id="f-nombre">
+        </div>
+        <div class="form-group">
+          <label>WhatsApp</label>
+          <input type="tel" placeholder="+52 XXX XXX XXXX" id="f-tel">
+        </div>
+        <div class="form-group">
+          <label>Tipo de unidad de interés</label>
+          <select id="f-tipo">
+            <option value="">Selecciona una opción</option>
+            <option>Freightliner Cascadia 2017-2018</option>
+            <option>Kenworth T680 2017-2018</option>
+            <option>Peterbilt 579 2017</option>
+            <option>Internacional LT 2017</option>
+            <option>Otro modelo (especificar abajo)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Estado / Ciudad de entrega</label>
+          <input type="text" placeholder="Ej. Uruapan, Michoacán" id="f-ciudad">
+        </div>
+        <div class="form-group">
+          <label>Comentario adicional (opcional)</label>
+          <textarea placeholder="Motor preferido, presupuesto, uso de la unidad..." id="f-nota"></textarea>
+        </div>
+        <button class="form-submit" onclick="enviarFormulario()">Solicitar Análisis Gratuito →</button>
+        <div class="form-note">🔒 Tus datos están protegidos bajo nuestra Política de Privacidad. No spam.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-logo">MASTER <span>TRUCK</span> ACADEMY</div>
+        <div class="footer-desc">
+          Firma especializada en gestión integral de importación de camiones y maquinaria pesada desde EE.UU. a México. Pedimento VU · Placa Federal · 100% Legal.
+        </div>
+        <div class="footer-legal-badges">
+          <span class="flb">RFC: HEFL950417K42</span>
+          <span class="flb">RESICO</span>
+          <span class="flb">T-MEC</span>
+          <span class="flb">Pedimento VU</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Servicios</div>
+        <ul>
+          <li><a href="#diferencial">Gestión de Importación</a></li>
+          <li><a href="#inventario">Inventario Especial</a></li>
+          <li><a href="#tecnologia">APP de Seguimiento</a></li>
+          <li><a href="#roi">Análisis Financiero ROI</a></li>
+          <li><a href="#garantia">Garantía Legal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Legal</div>
+        <ul>
+          <li><a href="#">Aviso de Privacidad</a></li>
+          <li><a href="#">Términos y Condiciones</a></li>
+          <li><a href="#">Política de Datos</a></li>
+          <li><a href="mailto:vendomycamion@gmail.com">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Master Truck Academy LLC · MTT Infraestructuras S.A. de C.V. · Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <a href="#">Aviso de Privacidad</a>
+        <a href="#">Términos</a>
+        <a href="https://wa.me/524521972141" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/524521972141?text=Hola,%20me%20interesa%20importar%20un%20camión%20desde%20EE.UU.%20Quisiera%20una%20cotización." class="wa-float" target="_blank">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+  <span class="wa-text">Cotizar por WhatsApp</span>
+</a>
+
+<script>
+  // NAVBAR SCROLL
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // MOBILE MENU
+  function toggleMenu() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  }
+
+  // SCROLL REVEAL
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // COUNTER ANIMATION
+  function animateCounter(el, end, duration) {
+    let start = 0;
+    const step = (end / duration) * 16;
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= end) { el.textContent = end + '+'; clearInterval(timer); }
+      else el.textContent = Math.floor(start) + '+';
+    }, 16);
+  }
+  const counterEl = document.getElementById('counter1');
+  const heroObs = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { animateCounter(counterEl, 47, 1200); heroObs.disconnect(); }
+  });
+  heroObs.observe(counterEl);
+
+  // FAQ TOGGLE
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // ── CONFIGURACIÓN MAKE.COM ──
+  // 1. Crea tu escenario en Make.com
+  // 2. Copia la URL del webhook y pégala aquí abajo:
+  const MAKE_WEBHOOK_URL = 'https://hook.us2.make.com/bwlwlhazolrxxqxktitnlmpuca3q3lgb';
+
+  // FORM SUBMIT → Make.com Webhook + WhatsApp fallback
+  async function enviarFormulario() {
+    const nombre  = document.getElementById('f-nombre').value.trim();
+    const tel     = document.getElementById('f-tel').value.trim();
+    const tipo    = document.getElementById('f-tipo').value;
+    const ciudad  = document.getElementById('f-ciudad').value.trim();
+    const nota    = document.getElementById('f-nota').value.trim();
+
+    if (!nombre || !tel) {
+      mostrarEstado('error', '⚠️ Por favor ingresa tu nombre y WhatsApp.');
+      return;
+    }
+
+    const btn = document.querySelector('.form-submit');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    mostrarEstado('loading', '⏳ Registrando tu solicitud...');
+
+    const payload = {
+      nombre,
+      whatsapp: tel,
+      unidad: tipo || 'Por definir',
+      ciudad: ciudad || 'Por definir',
+      nota: nota || '—',
+      fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
+      fuente: 'Landing Page MTA'
+    };
+
+    // Si ya tienes webhook configurado, envía a Make
+    if (MAKE_WEBHOOK_URL !== 'TU_URL_WEBHOOK_AQUI') {
+      try {
+        await fetch(MAKE_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        mostrarEstado('success', '✅ ¡Solicitud recibida! Te contactamos en menos de 24 horas.');
+        btn.textContent = '¡Enviado con éxito!';
+        limpiarFormulario();
+
+        // Abrir WhatsApp como canal adicional de contacto
+        setTimeout(() => {
+          const msg = encodeURIComponent(
+            `Hola, acabo de llenar el formulario en tu web.\n\n` +
+            `*Nombre:* ${nombre}\n*WhatsApp:* ${tel}\n` +
+            `*Unidad:* ${payload.unidad}\n*Ciudad:* ${payload.ciudad}\n` +
+            `*Nota:* ${payload.nota}`
+          );
+          window.open(`https://wa.me/524521972141?text=${msg}`, '_blank');
+        }, 1200);
+
+      } catch (err) {
+        // Si falla la red, al menos abre WhatsApp
+        abrirWhatsApp(payload);
+        mostrarEstado('warn', '⚡ Redirigiendo a WhatsApp para asegurar tu solicitud.');
+        btn.textContent = 'Solicitar Análisis Gratuito →';
+        btn.disabled = false;
+      }
+
+    } else {
+      // Webhook aún no configurado → WhatsApp directo
+      abrirWhatsApp(payload);
+      mostrarEstado('warn', '📲 Abriendo WhatsApp... (configura el webhook para captura automática)');
+      btn.textContent = 'Solicitar Análisis Gratuito →';
+      btn.disabled = false;
+    }
+  }
+
+  function abrirWhatsApp(p) {
+    const msg = encodeURIComponent(
+      `Hola! Me interesa importar un camión.\n\n` +
+      `*Nombre:* ${p.nombre}\n*Teléfono:* ${p.whatsapp}\n` +
+      `*Unidad:* ${p.unidad}\n*Ciudad:* ${p.ciudad}\n` +
+      `*Nota:* ${p.nota}\n\nSolicito mi Análisis de ROI gratuito.`
+    );
+    window.open(`https://wa.me/524521972141?text=${msg}`, '_blank');
+  }
+
+  function mostrarEstado(tipo, msg) {
+    let el = document.getElementById('form-status');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'form-status';
+      el.style.cssText = `
+        margin-top: 12px; padding: 12px 16px; border-radius: 4px;
+        font-size: 13px; font-family: 'DM Sans', sans-serif;
+        transition: all .3s; text-align: center;
+      `;
+      document.querySelector('.form-submit').after(el);
+    }
+    const estilos = {
+      success: 'background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.35);color:#4ADE80;',
+      error:   'background:rgba(217,64,64,.12);border:1px solid rgba(217,64,64,.35);color:#F87171;',
+      loading: 'background:rgba(200,151,58,.1);border:1px solid rgba(200,151,58,.3);color:#E4B860;',
+      warn:    'background:rgba(46,184,232,.1);border:1px solid rgba(46,184,232,.3);color:#2EB8E8;'
+    };
+    el.style.cssText += estilos[tipo] || estilos.loading;
+    el.textContent = msg;
+  }
+
+  function limpiarFormulario() {
+    ['f-nombre','f-tel','f-ciudad','f-nota'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    document.getElementById('f-tipo').value = '';
+  }
+</script>
+</body>
+</html>
